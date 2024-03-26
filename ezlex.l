@@ -28,6 +28,8 @@ WRITE {printf("%d: ", yylineno++); ECHO ; printf("\t-> WRITE\n"); }
 ; {printf("%d: ", yylineno++);ECHO ; printf("\t-> SEMI\n");}
 [0-9]* {printf("%d: ", yylineno++);ECHO ; printf("\t-> INT_VAL\n");}
 [A-Z|a-z]* {printf("%d: ", yylineno++);ECHO ; printf("\t-> ID\n");}
+\".*\" {printf("%d: ", yylineno++);ECHO ; printf("\t-> STRING\n");}
+\{[^}]*\} {printf("%d: ", yylineno++);ECHO ; printf("\t-> COMENT\n");}
 \n {}
 . {}
 %%
